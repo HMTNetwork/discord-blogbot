@@ -1,0 +1,14 @@
+[Unit]
+Description=HMT Discord Blog Bot Service
+After=network.target
+
+[Service]
+User=deployer
+Group=deployer
+WorkingDirectory=/var/www/bot/hmt/discord-blogbot
+ExecStart=/var/www/bot/hmt/discord-blogbot/venv/bin/python3 main.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
